@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".bundle." + ({"1":"main2"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".dist_ab_split/bundle." + ({"1":"libb","2":"main1","3":"main2"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -98,16 +98,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var a=__webpack_require__(1);
-	a.sayHello();
-
-
-	var b = __webpack_require__(2);
-	b.sayHello(); 
-
-	var c = __webpack_require__(3);
-	c.sayHello();
-
+	module.exports = __webpack_require__(1);
 
 
 /***/ },
@@ -117,26 +108,6 @@
 	module.exports = {
 	    sayHello:function(){
 	        console.log('Hello World! I\'m a!');
-	    }
-	};
-
-/***/ },
-/* 2 */
-/***/ function(module, exports) {
-
-	module.exports = {
-	    sayHello:function(){
-	        console.log('Hello World! I\'m b!');
-	    }
-	};
-
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
-
-	module.exports = {
-	    sayHello:function(){
-	        console.log('Hello World! I\'m c!');
 	    }
 	};
 

@@ -6,13 +6,13 @@ module.exports = {
         main2:'./main.2'
     },
     output:{
-        filename:'dist/bundle.[name].js'
+        filename:'dist_async/bundle.[name].js'
     },
     plugins: [
         new  webpack.optimize.CommonsChunkPlugin({
 		name:'main1',
-		chunks: ['main1', 'main2']
-		//async:true
+		chunks: ['main1', 'main2'],
+		async:true
 	})
     ]
 };
