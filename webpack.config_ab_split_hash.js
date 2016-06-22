@@ -6,10 +6,10 @@ var WebpackMd5Hash = require('webpack-md5-hash');
 
 module.exports = {
     entry:{
+        main1: './main',
+        main2: './main.2',
         liba: ['./a'],
         libb: ['./b'],
-        main1: './main',
-        main2: './main.2'
     },
     output: {
         path: path.join(__dirname, 'dist_ab_split_hash/'),
@@ -39,5 +39,15 @@ module.exports = {
             }
         }),
         */
+        new webpack.DefinePlugin({
+            'process.env':{
+                NODE_ENV: JSON.stringify("development"),
+                HostName: JSON.stringify("")},
+            IS_LOCAL: true,
+            TRACE_TURBOLINKS: true,
+        }),
+        new WebpackMd5Hash(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new ExtractTextPlugin('[name]-bundle.[contenthash:8].css', { allChunks: true }),
     ]
 };

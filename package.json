@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "webpack": "^1.12.9"
+    "webpack": "^1.12.9",
+    "webpack-stats-plugin": "^0.1.1"
   }
 }
